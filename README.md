@@ -1,4 +1,4 @@
-# Jev Sense
+# Jev Sense <img src="public/brand-icon.svg" alt="" width="32" height="32">
 
 English | [Read in Chinese](README.zh-CN.md)
 
