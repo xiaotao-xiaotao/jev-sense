@@ -1,0 +1,45 @@
+@media (max-width: 1200px) { .gallery-grid { column-count: 5; } .intro-art { opacity: .55; } }
+@media (max-width: 920px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; flex-direction: row; align-items: center; padding: 12px 20px; border-right: 0; border-bottom: 1px solid #d5e1d2; }
+  .sidebar-toggle { display: none; }
+  .brand { padding: 0 18px 0 0; }
+  .side-label, .side-tip { display: none; }
+  .side-link { margin: 0 4px 0 0; }
+  .sidebar-bottom { margin: 0 0 0 auto; }
+  .health { padding: 0; }
+  .gallery-grid { column-count: 4; }
+}
+@media (max-width: 720px) {
+  .main { padding: 0 17px; }
+  .topbar { padding: 12px 0; }
+  .topbar-id { display: none; }
+  .intro { min-height: 235px; padding: 30px 0 20px; }
+  .intro-pipeline { display: grid; grid-template-columns: minmax(0, 1fr) 12px minmax(0, 1fr) 12px minmax(0, 1fr); gap: 3px; width: 100%; margin-top: 14px; }
+  .intro-pipeline span { justify-content: center; gap: 5px; min-width: 0; padding: 6px 4px; font-size: 9px; }
+  .intro-pipeline span::before { width: 5px; height: 5px; }
+  .intro-pipeline i { width: 12px; }
+  .intro-art { top: 4px; right: 7px; width: 90px; height: 90px; opacity: .85; }
+  .intro-art::after { display: none; }
+  .intro-art .ring-one { inset: 4px; }
+  .intro-art .ring-two, .intro-art .art-note { display: none; }
+  .mascot-hero { top: 8px; left: 17px; width: 60px; height: 67px; }
+  .sorter-panel, .bin-details, .result-panel, .feed-panel { padding: 16px; }
+  .sorter-controls button { flex: 1 1 auto; }
+  .soft-button.danger { margin-left: 0; }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .details-grid { grid-template-columns: 1fr; }
+  .gallery-grid { column-count: 2; column-gap: 10px; }
+  .animal-card { margin-bottom: 10px; }
+  .sidebar { padding: 10px 12px; }
+  .brand { padding-right: 5px; }
+  .brand small, .side-link, .health { display: none; }
+  .brand strong { font-size: 13px; }
+  .viewer-hint { display: none; }
+  .viewer-footer { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .running .belt-stripes, .scanning .scan-beam, .running .belt-queue img { animation-duration: 3s; }
+  .scanning .scanning-card, .decision-pending .waiting-card, .approach-waiting { animation: none; }
+}
+

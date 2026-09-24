@@ -1,0 +1,21 @@
+      <dialog id="bin-details" class="bin-details" aria-labelledby="bin-details-title">
+        <div class="section-top"><div><span class="section-kicker">SORTED IMAGES</span><h2 id="bin-details-title">Category details</h2></div><button id="close-bin-details" type="button" class="soft-button" data-i18n="close">Close</button></div>
+        <p id="bin-details-hint" class="bin-details-hint" data-i18n="chooseBinImage" hidden>Choose an image to view its recognition details.</p>
+        <div id="bin-details-list" class="bin-details-list"></div>
+      </dialog>
+
+      <section id="results" class="details-grid">
+        <div class="result-panel">
+          <div class="section-top"><div><span class="section-kicker">02 / DECISION</span><h2 id="result-heading">Latest recognition</h2></div><span id="result-state" class="state-badge">Waiting for recognition</span></div>
+          <div id="result-empty" class="result-empty"><div class="empty-orbit">✳</div><strong data-i18n="resultEmptyTitle">Recognition records will appear here</strong><p data-i18n="resultEmptyBody">Start the belt to see labels, categories and model evidence.</p></div>
+          <div id="result-content" class="result-content" hidden>
+            <div class="result-lead"><button id="result-preview" type="button" class="result-preview" aria-label="Enlarge recognized image" aria-haspopup="dialog"><img id="result-image" alt=""></button><div><small id="result-source">—</small><strong id="result-name">—</strong><span id="category-tag" class="category-tag">—</span></div></div>
+            <button id="retry-result" type="button" class="soft-button retry-result" hidden>↻ Retry recognition</button>
+            <span id="accuracy-tag" class="accuracy-tag" hidden></span>
+            <div class="evidence-box"><div class="evidence-title"><span>01</span> <span data-i18n="evidenceTitle">Cloudflare visual evidence</span></div><p id="evidence-text">—</p></div>
+            <details class="decision-details"><summary><span>02</span> <span data-i18n="rawDecision">View raw Jev decision</span> <span>⌄</span></summary><pre id="decision-json"></pre></details>
+            <div class="timing"><span><span data-i18n="visionTime">Vision</span> <strong id="vision-time">—</strong></span><span>Jev <strong id="jev-time">—</strong></span><span><span data-i18n="totalTime">Total</span> <strong id="total-time">—</strong></span></div>
+          </div>
+        </div>
+        <div class="feed-panel"><div class="section-top"><div><span class="section-kicker">03 / ACTIVITY</span><h2 data-i18n="feedTitle">Sorting activity</h2></div></div><div id="feed" class="feed"><p class="feed-empty">Waiting for the first image to pass the scanner…</p></div></div>
+      </section>

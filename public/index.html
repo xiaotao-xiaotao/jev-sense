@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-sidebar="expanded">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jev Sense live image recognition and sorting">
+  <title>Jev Sense · Image Sorting Conveyor</title>
+  <link rel="icon" type="image/svg+xml" href="/brand-icon.svg?v=scan1">
+  <script>try{const language=localStorage.getItem("jev-sense-language"),theme=localStorage.getItem("jev-sense-theme"),sidebar=localStorage.getItem("jev-sense-sidebar");if(language==="zh")document.documentElement.lang="zh-CN";if(theme==="light")document.documentElement.dataset.theme="light";if(sidebar==="collapsed")document.documentElement.dataset.sidebar="collapsed"}catch{}</script>
+  <link rel="stylesheet" href="/style.css?v=sidebar-position2">
+  <link rel="stylesheet" href="/sorter.css?v=smooth-belt2">
+  <link rel="stylesheet" href="/results.css?v=retry1">
+  <link rel="stylesheet" href="/gallery.css?v=design1">
+  <link rel="stylesheet" href="/viewer.css?v=split1">
+  <link rel="stylesheet" href="/scroll-assistant.css?v=design1">
+  <link rel="stylesheet" href="/theme.css?v=sidebar-topbar1">
+  <link rel="stylesheet" href="/responsive.css?v=sidebar-topbar1">
+</head>
+<body>
+  <svg class="mascot-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="jev-mascot" viewBox="0 0 120 132">
+      <ellipse cx="60" cy="123" rx="35" ry="5" fill="#d4dfc7"/>
+      <path d="M60 29V17" fill="none" stroke="#31563b" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="60" cy="12" r="7" fill="#e4b472" stroke="#31563b" stroke-width="3"/>
+      <rect x="15" y="52" width="15" height="28" rx="7" fill="#bcd68d" stroke="#31563b" stroke-width="4"/>
+      <rect x="90" y="52" width="15" height="28" rx="7" fill="#bcd68d" stroke="#31563b" stroke-width="4"/>
+      <rect x="32" y="92" width="56" height="27" rx="13" fill="#d5ee84" stroke="#31563b" stroke-width="5"/>
+      <rect x="22" y="32" width="76" height="72" rx="24" fill="#fbfcf5" stroke="#31563b" stroke-width="5"/>
+      <path d="M28 67c0-18 14-29 32-29s32 11 32 29v6H28z" fill="#eaf3dc"/>
+      <g class="mascot-pupil"><ellipse cx="44" cy="67" rx="5" ry="7" fill="#244832"/><circle cx="46" cy="64" r="1.5" fill="#fff"/></g>
+      <g class="mascot-pupil"><ellipse cx="76" cy="67" rx="5" ry="7" fill="#244832"/><circle cx="78" cy="64" r="1.5" fill="#fff"/></g>
+      <circle cx="33" cy="79" r="4" fill="#e4b472" opacity=".7"/>
+      <circle cx="87" cy="79" r="4" fill="#e4b472" opacity=".7"/>
+      <path d="M53 83q7 7 14 0" fill="none" stroke="#31563b" stroke-width="3" stroke-linecap="round"/>
+      <path d="M60 111q-8-7 0-13 8 6 0 13z" fill="#739b46"/>
+    </symbol>
+  </svg>
+  <div class="app-shell">
+<!-- @include:sidebar -->
+
+    <main id="workspace" class="main">
+      <header class="topbar"><div class="topbar-leading"><button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="Collapse sidebar" title="Collapse sidebar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/><path class="sidebar-toggle-chevron" d="m15 10-2 2 2 2"/></svg></button><span class="topbar-location"><span data-i18n="workspace">Workspace</span> <b>/</b> <span data-i18n="animalSorting">Image Sorting</span></span></div><div class="topbar-actions"><span class="topbar-id">JEV SENSE / LIVE SORTING</span><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button><button id="lang-toggle" class="lang-toggle" type="button" data-language="en" aria-label="Switch to Chinese" title="Switch to Chinese"><span class="lang-zh" aria-hidden="true">文</span><span class="lang-separator" aria-hidden="true">/</span><span class="lang-en" aria-hidden="true">A</span></button></div></header>
+      <section class="intro">
+        <div><p class="eyebrow" data-i18n="heroEyebrow">VISION SYSTEM / 01</p><h1><span data-i18n="heroLine1">Let images pass the scanner,</span><br><em data-i18n="heroLine2">and find where they belong.</em></h1><p data-i18n="heroBody">Choose several images from the gallery or upload your own. Start the belt to recognize each image and sort it into a category.</p><div class="intro-pipeline" data-i18n-aria="pipelineAria" aria-label="Vision to classification"><span data-i18n="pipelineVision">01 / Vision</span><i aria-hidden="true"></i><span data-i18n="pipelineDecision">02 / Decision</span><i aria-hidden="true"></i><span data-i18n="pipelineSorting">03 / Sorting</span></div></div>
+        <div id="intro-mascot" class="intro-art" data-state="idle" aria-hidden="true"><span class="art-ring ring-one"></span><span class="art-ring ring-two"></span><svg class="mascot-hero" viewBox="0 0 120 132"><use href="#jev-mascot"></use></svg><span id="mascot-message" class="art-note">Waiting for images</span></div>
+      </section>
+
+<!-- @include:sorter -->
+
+<!-- @include:results -->
+
+<!-- @include:gallery -->
+      <footer>JEV SENSE <span>·</span> <span data-i18n="footer">See the features, find the category</span></footer>
+    </main>
+  </div>
+  <aside id="page-rail" class="page-rail" data-i18n-aria="pageNav" aria-label="Page navigation" hidden>
+    <span class="rail-kicker">EXPLORE</span>
+    <div id="page-rail-track" class="rail-track">
+      <span id="page-rail-fill" class="rail-fill" aria-hidden="true"></span>
+      <button id="page-rail-thumb" class="rail-thumb" type="button" role="slider" data-i18n-aria="scrollPosition" aria-label="Page scroll position" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Live Sorting · 0%"><svg viewBox="0 0 120 132" aria-hidden="true"><use href="#jev-mascot"></use></svg></button>
+    </div>
+    <span id="rail-current" class="rail-current">Sorting</span>
+    <span id="rail-percent" class="rail-percent" aria-hidden="true">0%</span>
+  </aside>
+<!-- @include:viewer -->
+  <script type="module" src="/app.js?v=scanner-flow1"></script>
+</body>
+</html>

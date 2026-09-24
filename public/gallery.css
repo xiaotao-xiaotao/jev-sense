@@ -1,0 +1,33 @@
+.gallery-section { padding: 48px 0 34px; }
+.gallery-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.gallery-header h2 { margin-top: 8px; font-size: 24px; font-weight: 650; letter-spacing: -.04em; }
+.gallery-header p { margin: 9px 0 0; color: #819083; font-size: 11px; line-height: 1.7; }
+.gallery-count { color: #879586; font-size: 12px; white-space: nowrap; }
+.filters { display: flex; gap: 7px; flex-wrap: wrap; margin: 23px 0 20px; }
+.filter { padding: 8px 13px; border: 1px solid #dce4d8; border-radius: 6px; background: #fff; color: #657868; font-size: 11px; cursor: pointer; transition: background .18s, border-color .18s, color .18s; }
+.filter:hover, .filter.active { border-color: #315540; background: #315540; color: #fff; }
+.gallery-grid { columns: 6; column-gap: 12px; }
+.animal-card { display: inline-block; width: 100%; margin-bottom: 12px; overflow: hidden; break-inside: avoid; border: 1px solid #dfe6dc; border-radius: 8px; background: #fff; vertical-align: top; transition: border-color .18s, box-shadow .18s; }
+.animal-card:hover { border-color: #a5b8a4; box-shadow: 0 4px 16px #28452912; }
+.card-image { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: #e5eae1; }
+.animal-card:nth-child(5n+1) .card-image { aspect-ratio: 4 / 5; }
+.animal-card:nth-child(5n+3) .card-image { aspect-ratio: 5 / 4; }
+.animal-card:nth-child(5n+4) .card-image { aspect-ratio: 5 / 6; }
+.animal-card:nth-child(5n) .card-image { aspect-ratio: 6 / 5; }
+.card-preview { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.card-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card-add { position: absolute; z-index: 1; right: 8px; bottom: 8px; width: 32px; height: 32px; padding: 0; border: 1px solid #dce8d7; border-radius: 6px; background: #f8fbf5; font-size: 0; cursor: pointer; transition: background .18s, border-color .18s; }
+.card-add:hover { border-color: #8aab85; background: #e8f1e3; }
+.card-add::before, .card-add::after { content: ""; position: absolute; top: 50%; left: 50%; width: 11px; height: 2px; border-radius: 2px; background: #315037; transform: translate(-50%, -50%); }
+.card-add::after { transform: translate(-50%, -50%) rotate(90deg); }
+.card-info { display: flex; justify-content: space-between; align-items: center; gap: 5px; padding: 12px; }
+.card-info strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+.card-info small { flex: none; color: #98a694; font-size: 10px; }
+.animal-card.is-added { border-color: #cbd2c7; background: #eef1ec; box-shadow: none; }
+.animal-card.is-added:hover { box-shadow: none; }
+.animal-card.is-added .card-preview img { filter: grayscale(1); opacity: .48; }
+.animal-card.is-added .card-info { color: #778277; }
+.card-added-label { position: absolute; z-index: 1; top: 8px; left: 8px; padding: 5px 8px; border-radius: 6px; background: #334b38; color: #fff; font-size: 11px; font-weight: 700; pointer-events: none; }
+.card-added-label[hidden] { display: none; }
+.animal-card.is-added .card-add { background: #d3dad0; color: #566a58; cursor: not-allowed; font-size: 18px; }
+.animal-card.is-added .card-add::before, .animal-card.is-added .card-add::after { display: none; }

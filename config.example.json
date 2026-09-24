@@ -1,0 +1,19 @@
+{
+  "server": {
+    "port": 8788,
+    "requestTimeoutMs": 90000,
+    "mock": true
+  },
+  "cloudflare": {
+    "accountId": "your-cloudflare-account-id",
+    "apiToken": "your-cloudflare-api-token",
+    "visionModel": "@cf/meta/llama-4-scout-17b-16e-instruct"
+  },
+  "jev": {
+    "apiUrl": "https://opencode.ai/zen/v1/systemone",
+    "model": "jev-1.13-free",
+    "apiKey": "your-jev-api-key",
+    "apiKeyHeader": "Authorization",
+    "apiKeyPrefix": "Bearer "
+  }
+}

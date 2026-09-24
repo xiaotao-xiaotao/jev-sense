@@ -1,0 +1,43 @@
+      <section id="sorter" class="sorter-panel">
+        <div class="section-top">
+          <div><span class="section-kicker">01 / LIVE SORTING</span><h2 data-i18n="sorterTitle">Image Sorting Conveyor</h2></div>
+          <span id="run-state" class="state-badge">Waiting for images</span>
+        </div>
+        <div class="sorter-controls">
+          <button id="sample" type="button" class="soft-button" data-i18n="sample">＋ Add 6 examples</button>
+          <button id="upload" type="button" class="soft-button" data-i18n="upload">↑ Upload images</button>
+          <input id="file-input" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden>
+          <button id="start" type="button" class="primary-button" data-i18n="start">▶ Start AI sorting</button>
+          <button id="pause" type="button" class="soft-button" data-i18n="pause" disabled>Ⅱ Pause</button>
+          <button id="clear" type="button" class="soft-button danger" data-i18n="clear">Clear</button>
+        </div>
+        <div class="metrics">
+          <div><span data-i18n="pending">Pending</span><strong id="queue-count">0</strong></div>
+          <div><span data-i18n="processed">Processed</span><strong id="done-count">0</strong></div>
+          <div><span data-i18n="accuracy">Correct</span><strong id="correct-count">—</strong></div>
+          <div><span data-i18n="review">Needs review</span><strong id="review-count">0</strong></div>
+        </div>
+        <div id="sorter-scroll" class="sorter-scroll">
+          <div id="sorter-stage" class="sorter-stage">
+            <div class="stage-guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="stage-header"><span data-i18n="inputHeader">INPUT / IMAGES</span><span>VISION SCAN</span><span data-i18n="outputHeader">CLASSIFIED / OUTPUT</span></div>
+            <div id="intake" class="intake"><span data-i18n="intake">Drop zone</span><strong id="intake-count">0</strong><small data-i18n="intakeHint">Waiting for the belt</small></div>
+            <div class="belt"><div class="belt-stripes"></div><div id="belt-queue" class="belt-queue"></div><div class="belt-arrow">→ → →</div></div>
+            <div id="scanner" class="scanner"><span class="scan-beam"></span><strong data-i18n="scanner">AI scan</strong><small id="scanner-text">Waiting for image</small></div>
+            <div id="junction-approach" class="junction-approach" aria-hidden="true"></div>
+            <div id="junction" class="sort-junction" aria-hidden="true">✳</div>
+            <div class="bin-stack">
+              <button id="bin-mammal" type="button" class="bin" data-bin-key="mammal" aria-controls="bin-details" aria-expanded="false"><span class="bin-icon">01</span><span class="bin-label"><strong data-i18n="category.mammal">Mammals</strong><small id="count-mammal">0 images</small></span><span id="thumb-mammal" class="bin-thumbs"></span></button>
+              <button id="bin-bird" type="button" class="bin" data-bin-key="bird" aria-controls="bin-details" aria-expanded="false"><span class="bin-icon">02</span><span class="bin-label"><strong data-i18n="category.bird">Birds</strong><small id="count-bird">0 images</small></span><span id="thumb-bird" class="bin-thumbs"></span></button>
+              <button id="bin-reptile" type="button" class="bin" data-bin-key="reptile" aria-controls="bin-details" aria-expanded="false"><span class="bin-icon">03</span><span class="bin-label"><strong data-i18n="category.reptile">Reptiles</strong><small id="count-reptile">0 images</small></span><span id="thumb-reptile" class="bin-thumbs"></span></button>
+              <button id="bin-amphibian" type="button" class="bin" data-bin-key="amphibian" aria-controls="bin-details" aria-expanded="false"><span class="bin-icon">04</span><span class="bin-label"><strong data-i18n="category.amphibian">Amphibians</strong><small id="count-amphibian">0 images</small></span><span id="thumb-amphibian" class="bin-thumbs"></span></button>
+              <button id="bin-fish" type="button" class="bin" data-bin-key="fish" aria-controls="bin-details" aria-expanded="false"><span class="bin-icon">05</span><span class="bin-label"><strong data-i18n="category.fish">Fish</strong><small id="count-fish">0 images</small></span><span id="thumb-fish" class="bin-thumbs"></span></button>
+              <button id="bin-insect" type="button" class="bin" data-bin-key="insect" aria-controls="bin-details" aria-expanded="false"><span class="bin-icon">06</span><span class="bin-label"><strong data-i18n="category.insect">Insects</strong><small id="count-insect">0 images</small></span><span id="thumb-insect" class="bin-thumbs"></span></button>
+              <button id="bin-review" type="button" class="bin review-bin" data-bin-key="review" aria-controls="bin-details" aria-expanded="false"><span class="bin-icon">07</span><span class="bin-label"><strong data-i18n="category.review">Needs review</strong><small id="count-review">0 images</small></span><span id="thumb-review" class="bin-thumbs"></span></button>
+            </div>
+            <div id="flying-layer" class="flying-layer" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="queue-line"><strong data-i18n="queueTitle">Waiting queue</strong><span id="queue-hint" data-i18n="queueHint">Use ＋ on a gallery image or upload your own</span><div id="queue-list" class="queue-list"></div></div>
+        <p id="status" class="status-line" role="status">Add some images, then start AI sorting.</p>
+      </section>

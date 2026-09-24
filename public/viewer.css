@@ -1,0 +1,18 @@
+.image-viewer { width: min(960px, calc(100vw - 32px)); height: min(86vh, 800px); max-width: none; max-height: none; padding: 0; overflow: hidden; border: 1px solid #44614f; border-radius: 16px; background: #fff; color: #203025; box-shadow: 0 24px 80px #061b15aa; }
+.image-viewer::backdrop { background: #061b15c9; }
+.viewer-shell { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.viewer-header, .viewer-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 12px 16px; }
+.viewer-header strong, .viewer-header small { display: block; }
+.viewer-header strong { font-size: 15px; }
+.viewer-header small { margin-top: 3px; color: #819080; font-size: 11px; }
+.viewer-close { width: 34px; height: 34px; border: 0; border-radius: 8px; background: #f2f7e9; color: #315037; font-size: 24px; cursor: pointer; }
+.viewer-stage { flex: 1; min-height: 0; overflow: hidden; background: #172c24; touch-action: none; }
+.viewer-stage.zoomed { cursor: grab; }
+.viewer-stage.dragging { cursor: grabbing; }
+.viewer-stage img { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; pointer-events: none; transform-origin: center center; }
+.viewer-footer { border-top: 1px solid #e3e9dc; }
+.viewer-hint { color: #819080; font-size: 11px; }
+.viewer-controls { display: flex; align-items: center; gap: 6px; }
+.viewer-controls button { min-width: 34px; height: 34px; padding: 0 10px; border: 1px solid #dce6d7; border-radius: 8px; background: #f8faf4; color: #315037; font-size: 14px; cursor: pointer; }
+.viewer-controls button:disabled { opacity: .4; cursor: not-allowed; }
+.viewer-controls output { min-width: 46px; color: #526652; font-size: 12px; text-align: center; }
