@@ -6,7 +6,7 @@ Jev Sense is an interactive demo of image understanding and structured decisions
 
 The same workflow could be adapted for adult-content screening, image tagging, and custom classification. These are future applications; the current conveyor UI implements animal sorting.
 
-![Full-page overview of Jev Sense](docs/overview.png)
+[![Six sample images moving through the sorting conveyor](docs/demo.gif)](docs/demo.mp4)
 
 [Watch six images get sorted (MP4)](docs/demo.mp4) · [Browse the gallery screenshot](docs/gallery.png) · [See recognition details](docs/results.png)
 
@@ -36,7 +36,9 @@ For development, run `npm run dev`. Run `npm test` for the server tests.
 
 ### Screenshots
 
-The overview above shows the entire page. The images below capture each section from its heading to its bottom edge.
+The overview below shows the entire page. The other images capture each section from its heading to its bottom edge.
+
+![Full-page overview of Jev Sense](docs/overview.png)
 
 ![Images moving through the conveyor](docs/conveyor.png)
 
@@ -60,12 +62,6 @@ In live animal-sorting mode, the local server calls a vision model on Cloudflare
 
 The initial idea was to convert images and text into embeddings and send both vectors to Jev for a decision. The System One API used here has no documented multimodal embedding input for that workflow. This led to the current two-step design: the vision model produces a readable image description, and Jev makes a structured decision from that text.
 
-## Acknowledgments
-
-- Thanks to [jev-visual](https://github.com/hr98w/jev-visual) for inspiring this project.
-- Thanks to [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) for its free usage allowance for visual recognition.
-- Thanks to [TypeSafe AI](https://docs.typesafe.ai/) for Jev and System One, and [OpenCode Zen](https://opencode.ai/docs/zen/) for offering the limited-time free `jev-1.13-free` endpoint used by the example configuration.
-
 ## HTTP endpoints
 
 | Endpoint | Purpose |
@@ -79,3 +75,9 @@ The initial idea was to convert images and text into embeddings and send both ve
 | `POST /v1/judge` | General visual-evidence and Jev question endpoint. |
 
 By default the server listens only on `127.0.0.1`. The request body limit is 12 MB, and the Base64 image limit is 10 MB.
+
+## Acknowledgments
+
+- Thanks to [jev-visual](https://github.com/hr98w/jev-visual) for inspiring this project.
+- Thanks to [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) for its free usage allowance for visual recognition.
+- Thanks to [TypeSafe AI](https://docs.typesafe.ai/) for Jev and System One, and [OpenCode Zen](https://opencode.ai/docs/zen/) for offering the limited-time free `jev-1.13-free` endpoint used by the example configuration.

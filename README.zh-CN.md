@@ -6,9 +6,9 @@ Jev Sense 是一个展示“图像理解 → 结构化判断 → 分类复核”
 
 这套流程后续可用于图像鉴黄（成人内容审核）、图片打标签和自定义分类。当前传送带界面实现的是动物分类，这些用途尚未作为页面功能提供。
 
-![Jev Sense 完整页面总览](docs/overview.png)
+[![6 张示例图片在传送带上完成分类的动画](docs/demo.gif)](docs/demo.mp4)
 
-[观看 6 张示例图分类演示视频（MP4）](docs/demo.mp4) · [图库截图](docs/gallery.png) · [识别结果截图](docs/results.png)
+[观看 6 张示例图分类演示视频（MP4）](docs/demo.mp4) · [完整页面总览](docs/overview.png) · [图库截图](docs/gallery.png) · [识别结果截图](docs/results.png)
 
 视频及队列、传送带、结果截图使用真实 Cloudflare 与 Jev 服务录制。本次 6 张示例图均与图库标注一致；视频以 1.5 倍速播放。整页总览和图库截图使用模拟模式。
 
@@ -46,12 +46,6 @@ Cloudflare Workers AI `@cf/meta/llama-4-scout-17b-16e-instruct` 先描述可见�
 
 最初的设想是把图片和文字分别转成向量，再将两组向量交给 Jev 判断。当前使用的 System One 接口没有为这种流程提供文档化的多模态向量输入方式，因此改为让视觉模型先生成可读的图片描述，再由 Jev 根据文字做结构化判定。
 
-## 致谢
-
-- 感谢 [jev-visual](https://github.com/hr98w/jev-visual) 为本项目提供思路。
-- 感谢 [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) 为视觉识别提供免费额度。
-- 感谢 [TypeSafe AI](https://docs.typesafe.ai/) 开发 Jev 和 System One，以及 [OpenCode Zen](https://opencode.ai/docs/zen/) 提供示例配置所用的限时免费 `jev-1.13-free` 接口。
-
 ## 接口
 
 - `GET /health`：服务配置状态，不包含密钥。
@@ -63,4 +57,10 @@ Cloudflare Workers AI `@cf/meta/llama-4-scout-17b-16e-instruct` 先描述可见�
 - `POST /v1/judge`：保留的通用视觉证据与 Jev 问答接口。
 
 服务默认只监听 `127.0.0.1`，请求体上限 12 MB，Base64 图片上限 10 MB。
+
+## 致谢
+
+- 感谢 [jev-visual](https://github.com/hr98w/jev-visual) 为本项目提供思路。
+- 感谢 [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) 为视觉识别提供免费额度。
+- 感谢 [TypeSafe AI](https://docs.typesafe.ai/) 开发 Jev 和 System One，以及 [OpenCode Zen](https://opencode.ai/docs/zen/) 提供示例配置所用的限时免费 `jev-1.13-free` 接口。
 
